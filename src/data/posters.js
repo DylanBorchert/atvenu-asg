@@ -32,7 +32,7 @@ const posters = `[
                 "CountIn": 100,
                 "Add": 15,
                 "Comp": 5,
-                "CountOut": 110,
+                "CountOut": 100,
                 "Cost": 20.0
             }
         ]
@@ -51,7 +51,7 @@ const posters = `[
                 "CountIn": 150,
                 "Add": 25,
                 "Comp": 15,
-                "CountOut": 160,
+                "CountOut": 130,
                 "Cost": 18.0
             }
         ]
@@ -70,7 +70,7 @@ const posters = `[
                 "CountIn": 120,
                 "Add": 30,
                 "Comp": 12,
-                "CountOut": 138,
+                "CountOut": 118,
                 "Cost": 15.0
             }
         ]
@@ -89,7 +89,7 @@ const posters = `[
                 "CountIn": 90,
                 "Add": 10,
                 "Comp": 8,
-                "CountOut": 92,
+                "CountOut": 82,
                 "Cost": 22.0
             }
         ]
@@ -108,7 +108,7 @@ const posters = `[
                 "CountIn": 80,
                 "Add": 20,
                 "Comp": 5,
-                "CountOut": 95,
+                "CountOut": 85,
                 "Cost": 25.0
             }
         ]
@@ -127,7 +127,7 @@ const posters = `[
                 "CountIn": 110,
                 "Add": 15,
                 "Comp": 11,
-                "CountOut": 114,
+                "CountOut": 104,
                 "Cost": 17.0
             }
         ]
@@ -146,7 +146,7 @@ const posters = `[
                 "CountIn": 70,
                 "Add": 10,
                 "Comp": 7,
-                "CountOut": 73,
+                "CountOut": 63,
                 "Cost": 12.0
             },
             {
@@ -155,7 +155,7 @@ const posters = `[
                 "CountIn": 120,
                 "Add": 25,
                 "Comp": 10,
-                "CountOut": 135,
+                "CountOut": 125,
                 "Cost": 20.0
             }
         ]
@@ -174,7 +174,7 @@ const posters = `[
                 "CountIn": 85,
                 "Add": 20,
                 "Comp": 9,
-                "CountOut": 96,
+                "CountOut": 86,
                 "Cost": 19.0
             }
         ]
