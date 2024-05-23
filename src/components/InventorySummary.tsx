@@ -15,7 +15,7 @@ export default function InventorySummary(props: any) {
     {
         "id": "UnitsRemaining",
         "label": "Units Remaining",
-        "value": 0,
+        "value": props.totalCountOut,
         "color": '#aaa'
     }
     ]
@@ -24,12 +24,6 @@ export default function InventorySummary(props: any) {
      * This function is used to render the total number of units sold in the center of the pie chart.
     */
     const CenteredMetric = ({ dataWithArc, centerX, centerY }: any) => {
-        let total = 0;
-        // Calculate the total number of units sold
-        dataWithArc.forEach((datum: any) => {
-            total += datum.value;
-        });
-
         return (
             <>
                 <text
@@ -42,7 +36,7 @@ export default function InventorySummary(props: any) {
                         fontWeight: 'bold',
                     }}
                 >
-                    {total}
+                    {dataWithArc[0].data.value}
                 </text>
                 <text
                     x={centerX}
