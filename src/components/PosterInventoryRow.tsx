@@ -20,13 +20,13 @@ export default function PosterInventoryRow(props: any) {
 
     return (
         <tr key={props.option.id} className="text-center h-12">
-            <td>
+            <td className="cursor-not-allowed">
                 {props.option.dimensions}
             </td>
-            <td>
+            <td className="cursor-not-allowed">
                 ${props.option.Cost.toFixed(2)}
             </td>
-            <td>
+            <td className="cursor-not-allowed">
                 {QTYAvail}
             </td>
             <td className="border">
@@ -35,7 +35,7 @@ export default function PosterInventoryRow(props: any) {
             <td className="text-green-500 border">
                 <input type="text" name="Add" defaultValue={props.option.Add} size={1} className="w-full text-center h-12" onBlur={props.updatePoster} disabled={props.isLocked} id={props.option.id} />
             </td>
-            <td className="text-[#00c7fb] border">
+            <td className="text-[#00c7fb] border cursor-not-allowed">
                 {TotalLn}
             </td>
             <td className="text-red-500 border">
@@ -44,10 +44,10 @@ export default function PosterInventoryRow(props: any) {
             <td className="border">
                 <input type="text" name="CountOut" defaultValue={props.option.CountOut} size={1} className="w-full text-center h-12" onBlur={props.updatePoster} disabled={props.isLocked} id={props.option.id} />
             </td>
-            <td className="text-[#00c7fb] border">
+            <td className="text-[#00c7fb] border cursor-not-allowed">
                 {TotalSold}
             </td>
-            <td className="text-[#00c7fb] border">
+            <td className="text-[#00c7fb] border cursor-not-allowed">
                 {Gross.toFixed(2)}
             </td>
         </tr>

@@ -59,7 +59,7 @@ export default function Home() {
   return (
     <main className="max-w-4xl w-full mx-auto">
       <PosterList posters={posters} isLocked={isLocked} updatePosters={updatePosters} />
-      <InventorySummary handleLock={handleLock} unitsSold={unitsSold} totalGross={totalGross} totalCountOut={totalCountOut} />
+      <InventorySummary handleLock={handleLock} unitsSold={unitsSold} totalGross={totalGross} totalCountOut={totalCountOut} isLocked={isLocked} />
       <div className='w-fit ml-auto p-3'>
         <a href="https://github.com/DylanBorchert/atvenu-asg" target='_blank' className="text-blue-500 align">See git repo</a>
       </div>

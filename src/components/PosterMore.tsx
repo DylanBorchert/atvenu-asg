@@ -5,7 +5,7 @@ export default function PosterMore(props: any) {
         <td colSpan={2}>
             <Popup
                 trigger={
-                    <button type="button" className="bg-gray-200 text-gray-600 p-2 rounded-md hover:bg-[#00c7fb] hover:text-white w-full button">More</button>
+                    <button type="button" className='bg-gray-200 text-gray-600 p-2 rounded-md w-full hover:bg-[#00c7fb] hover:text-white disabled:bg-gray-500 disabled:hover:bg-gray-500 disabled:text-white' disabled={props.isLocked}>More</button>
                 }
                 position={'bottom center'}
 
