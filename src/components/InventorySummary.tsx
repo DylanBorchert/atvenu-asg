@@ -22,7 +22,6 @@ export default function InventorySummary(props: any) {
 
     /*
      * This function is used to render the total number of units sold in the center of the pie chart.
-    
     */
     const CenteredMetric = ({ dataWithArc, centerX, centerY }: any) => {
         let total = 0;
@@ -63,7 +62,7 @@ export default function InventorySummary(props: any) {
 
 
     return (
-        <div className='border-t-[1px] mt-2'>
+        <div className='mt-2 px-3'>
             <p className='text-4xl font-bold text-center p-2 w-80 ml-auto text-gray-500'>Total</p>
             <div className='mx-auto flex justify-end gap-3'>
                 <div className='h-40 w-40'>
