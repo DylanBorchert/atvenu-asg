@@ -9,11 +9,11 @@ const posters = `[
             {
 				"id": 1,
                 "dimensions": "24x36",
-                "CountIn": 100,
-                "Add": 20,
-                "Comp": 10,
-                "CountOut": 90,
-                "Cost": 15.0
+                "CountIn": 12,
+                "Add": 0,
+                "Comp": 0,
+                "CountOut": 5,
+                "Cost": 10.0
             }
         ]
     },
