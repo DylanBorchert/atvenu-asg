@@ -8,6 +8,11 @@ export default function Poster(props: any) {
 
     const [posterdetails, setPosterdetails] = useState<any>(props.poster);
 
+    /**
+     * Updates the details of the poster based on the event target's name and value.
+     * If the event target's name is "Cost", it converts the value to a number with 2 decimal places.
+     * @param {any} e - The event object containing the target element.
+     */
     const updateDetails = (e: any) => {
         if (e.target.name === "Cost") {
             setPosterdetails({ ...posterdetails, [e.target.name]: Number(e.target.value).toFixed(2) });
@@ -16,8 +21,12 @@ export default function Poster(props: any) {
         }
     }
 
-
-
+    /**
+     * Updates the option details of the poster.
+     * Then Triggers the parent component to update the poster.
+     * 
+     * @param options - The new options for the poster.
+     */
     const updateOptionDetails = (options: any) => {
         let newDetails = { ...posterdetails, options: options };
         setPosterdetails(newDetails);

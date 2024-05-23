@@ -8,12 +8,12 @@ export default function PosterInventoryForm(props: any) {
 
     const [posterOptions, setposterOptions] = useState<any>(props.posterOptions);
 
-    const updateSummary = (newUnitSold: number, newTotalGross: number) => {
-        props.updateUntiSold(newUnitSold);
-        props.updateTotalGross(newTotalGross);
-    }
 
-
+    /**
+     * Updates the poster options based on the event target.
+     * Then triggers the parent component to update the poster details.
+     * @param {any} e - The event object.
+     */
     const updatePoster = (e: any) => {
         let index = e.target.id - 1;  // Adjusting index based on id from the event
         if (index >= 0 && index < posterOptions.length) {
@@ -26,34 +26,63 @@ export default function PosterInventoryForm(props: any) {
             setposterOptions(newPoster);
             props.updateOptionDetails(newPoster);
         }
-
     }
 
-
+    /**
+     * Calculates the sum of the total count in and add values for each poster option.
+     * @param {Array} posterOptions - The array of poster options.
+     * @returns {number} - The sum of the total count in and add values.
+     */
     const sumOfTotalIn = useMemo(() => {
         return posterOptions.reduce((acc: any, option: any) => {
             return acc + option.CountIn + option.Add
         }, 0)
     }, [posterOptions])
 
+    /**
+     * Calculates the sum of the 'Comp' property for each option in the posterOptions array.
+     * 
+     * @param {Array} posterOptions - The array of poster options.
+     * @returns The sum of the 'Comp' property values.
+     */
     const sumOfComp = useMemo(() => {
         return posterOptions.reduce((acc: any, option: any) => {
             return acc + option.Comp
         }, 0)
     }, [posterOptions])
 
+    /**
+     * Calculates the sum of the "CountOut" property for each poster option.
+     * 
+     * @param {Array} posterOptions - The array of poster options.
+     * @returns {number} - The sum of the "CountOut" property.
+     */
     const sumOfCountOut = useMemo(() => {
         return posterOptions.reduce((acc: any, option: any) => {
             return acc + option.CountOut
         }, 0)
     }, [posterOptions])
 
+    /**
+     * Calculates the sum of the total sold posters.
+     *
+     * @param {Array} posterOptions - The array of poster options.
+     * @returns The sum of the total sold posters.
+     */
     const sumOfTotalSold = useMemo(() => {
         return posterOptions.reduce((acc: any, option: any) => {
             return acc + ((option.CountIn + option.Add) - option.CountOut - option.Comp)
         }, 0)
     }, [posterOptions])
 
+    /**
+     * Calculates the sum of the gross value based on the given poster options.
+     * The gross value is calculated by subtracting the count out and compensation from the sum of count in and additional count,
+     * and then multiplying it by the cost of each option.
+     *
+     * @param {Array} posterOptions - The array of poster options.
+     * @returns The sum of the gross value.
+     */
     const sumOfGross = useMemo(() => {
         return posterOptions.reduce((acc: any, option: any) => {
             return acc + ((option.CountIn + option.Add) - option.CountOut - option.Comp) * option.Cost

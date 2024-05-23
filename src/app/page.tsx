@@ -13,6 +13,12 @@ export default function Home() {
     setPosters(getPosters());
   }, []);
 
+  /**
+   * Calculates the total number of units sold based on the given posters array.
+   *
+   * @param posters - An array of posters.
+   * @returns The total number of units sold.
+   */
   const unitsSold = useMemo(() => {
     return posters.reduce((acc: any, option: any) => {
       return acc + option.options.reduce((acc: any, option: any) => {
@@ -21,6 +27,14 @@ export default function Home() {
     }, 0);
   }, [posters]);
 
+  /**
+   * Calculates the total gross value based on the given posters array.
+   * The total gross value is calculated by summing the product of each poster's
+   * (CountIn + Add - CountOut - Comp) and its corresponding Cost.
+   *
+   * @param posters - An array of posters.
+   * @returns The total gross value.
+   */
   const totalGross = useMemo(() => {
     return posters.reduce((acc: any, option: any) => {
       return acc + option.options.reduce((acc: any, option: any) => {
@@ -29,6 +43,13 @@ export default function Home() {
     }, 0);
   }, [posters]);
 
+
+  /**
+   * Calculates the total count out based on the provided posters.
+   *
+   * @param posters - An array of posters.
+   * @returns The total count out.
+   */
   const totalCountOut = useMemo(() => {
     return posters.reduce((acc: any, option: any) => {
       return acc + option.options.reduce((acc: any, option: any) => {
@@ -37,15 +58,17 @@ export default function Home() {
     }, 0);
   }, [posters]);
 
+
+  /**
+   * Updates the posters array with a new poster object.
+   *
+   * @param {any} newPoster - The new poster object to be added or updated in the posters array.
+   */
   const updatePosters = (newPoster: any) => {
-    let newUnitSold = 0;
-    let newTotalGross = 0;
     let newPosters = posters.map((poster: any) => {
       if (poster.id === newPoster.id) {
         return newPoster;
       }
-      newUnitSold += poster.unitSold;
-      newTotalGross += poster.unitSold * poster.cost;
       return poster;
     })
     setPosters(newPosters);

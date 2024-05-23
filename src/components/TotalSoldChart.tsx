@@ -2,23 +2,30 @@ import { ResponsivePie } from "@nivo/pie";
 
 export default function TotalSoldChart(props: any) {
 
-    const data = [{
-        "id": "TotalSold",
-        "label": "TotalSold",
-        "value": props.TotalSold,
-        "color": '#00c7fb'
-    },
-    {
-        "id": "CountOut",
-        "label": "CountOut",
-        "value": props.CountOut,
-        "color": '#aaa'
-    }
+    // Create data for the pie chart
+    const data = [
+        {
+            "id": "TotalSold",
+            "label": "TotalSold",
+            "value": props.TotalSold,
+            "color": '#00c7fb'
+        },
+        {
+            "id": "CountOut",
+            "label": "CountOut",
+            "value": props.CountOut,
+            "color": '#aaa'
+        }
     ]
 
-    /*
-     * This function is used to render the total number of units sold in the center of the pie chart.
-    */
+
+    /**
+     * Renders a centered metric component for the pie chart with Total Sold.
+     * @param dataWithArc - The data with arc.
+     * @param centerX - The x-coordinate of the center.
+     * @param centerY - The y-coordinate of the center.
+     * @returns The rendered centered metric component.
+     */
     const CenteredMetric = ({ dataWithArc, centerX, centerY }: any) => {
         return (
             <>
