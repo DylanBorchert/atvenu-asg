@@ -8,15 +8,22 @@ export default function Poster(props: any) {
 
     const [posterdetails, setPosterdetails] = useState<any>(props.poster);
 
-
     const updateDetails = (e: any) => {
-        console.log(e.target.value)
         if (e.target.name === "Cost") {
             setPosterdetails({ ...posterdetails, [e.target.name]: Number(e.target.value).toFixed(2) });
         } else {
             setPosterdetails({ ...posterdetails, [e.target.name]: e.target.value });
         }
     }
+
+
+
+    const updateOptionDetails = (options: any) => {
+        let newDetails = { ...posterdetails, options: options };
+        setPosterdetails(newDetails);
+        props.updatePosters(newDetails);
+    }
+
 
     return (
         <div key={props.poster.id} className="border-b-[1px] pb-3 px-3">
@@ -41,7 +48,7 @@ export default function Poster(props: any) {
                         </div>
                     ) : null}
                 </div>
-                <PosterInventoryTable isLocked={props.isLocked} updateDetails={updateDetails} posterOptions={posterdetails.options} posterdetails={posterdetails} />
+                <PosterInventoryTable isLocked={props.isLocked} updateDetails={updateDetails} posterOptions={posterdetails.options} posterdetails={posterdetails} updateOptionDetails={updateOptionDetails} />
             </div>
         </div>
     )

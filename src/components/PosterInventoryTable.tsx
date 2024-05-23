@@ -7,8 +7,13 @@ export default function PosterInventoryForm(props: any) {
 
     const [posterOptions, setposterOptions] = useState<any>(props.posterOptions);
 
+    const updateSummary = (newUnitSold: number, newTotalGross: number) => {
+        props.updateUntiSold(newUnitSold);
+        props.updateTotalGross(newTotalGross);
+    }
+
+
     const updatePoster = (e: any) => {
-        console.log(e.target.value)
         let index = e.target.id - 1;  // Adjusting index based on id from the event
         if (index >= 0 && index < posterOptions.length) {
             let newPoster = posterOptions.map((item: any, idx: number) => {
@@ -17,9 +22,10 @@ export default function PosterInventoryForm(props: any) {
                 }
                 return item;
             });
-            console.log(newPoster)
             setposterOptions(newPoster);
+            props.updateOptionDetails(newPoster);
         }
+
     }
 
 

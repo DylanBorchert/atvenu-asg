@@ -9,13 +9,13 @@ export default function InventorySummary(props: any) {
     const data = [{
         "id": "UnitsSold",
         "label": "Units Sold",
-        "value": 34591,
+        "value": props.unitsSold,
         "color": '#00c7fb'
     },
     {
         "id": "UnitsRemaining",
         "label": "Units Remaining",
-        "value": 1,
+        "value": 0,
         "color": '#aaa'
     }
     ]
@@ -79,7 +79,7 @@ export default function InventorySummary(props: any) {
                     />
                 </div>
                 <div className='h-40 w-40 flex flex-col justify-between py-5'>
-                    <p className='text-center font-bold text-xl text-[#00c7fb]'>$691,490.00</p>
+                    <p className='text-center font-bold text-xl text-[#00c7fb]'>${props.totalGross.toFixed(2)}</p>
                     <button onClick={props.handleLock} className='bg-gray-200 text-gray-600 p-2 rounded-md w-40 mt-5 hover:bg-[#00c7fb] hover:text-white'>Settle</button>
                 </div>
             </div>
