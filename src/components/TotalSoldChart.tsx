@@ -42,7 +42,7 @@ export default function TotalSoldChart(props: any) {
             <ResponsivePie
                 margin={{ top: 10, right: 10, bottom: 10, left: 10 }}
                 data={data}
-                innerRadius={0.9}
+                innerRadius={0.85}
                 padAngle={0.7}
                 cornerRadius={3}
                 activeOuterRadiusOffset={8}

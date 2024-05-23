@@ -24,7 +24,7 @@ export default function PosterInventoryRow(props: any) {
                 {props.option.dimensions}
             </td>
             <td>
-                {props.option.Cost}
+                ${props.option.Cost.toFixed(2)}
             </td>
             <td>
                 {QTYAvail}

@@ -4,7 +4,8 @@ const posters = `[
         "artist": "ACDC",
         "title": "Highway to Hell",
         "filename": "ACDC - Highway to Hell - Rock Poster.jpg",
-        "description": "Iconic rock poster featuring ACDC, perfect for collectors and fans.",
+        "description": "",
+        "note": "",
         "options": [
             {
 				"id": 1,
@@ -23,6 +24,7 @@ const posters = `[
         "title": "Celebration Day",
         "filename": "Led Zeppelin - Celebration Day - Rock Poster.jpg",
         "description": "A vintage-style poster of Led Zeppelin’s Celebration Day.",
+        "note": "",
         "options": [
             {
 				"id": 1,
@@ -40,7 +42,8 @@ const posters = `[
         "artist": "Nirvana",
         "title": "Nevermind",
         "filename": "Nirvana - Nevermind - Australian Tour Poster.jpg",
-        "description": "Commemorative tour poster for Nirvana's legendary Australian tour.",
+        "note": "",
+        "description": "",
         "options": [
             {
 				"id": 1,
@@ -59,6 +62,7 @@ const posters = `[
         "title": "Smiley Face",
         "filename": "Nirvana - Smiley Face - Rock Poster.jpg",
         "description": "Iconic Nirvana Smiley Face poster, a must-have for grunge fans.",
+        "note": "",
         "options": [
             {
 				"id": 1,
@@ -77,6 +81,7 @@ const posters = `[
         "title": "Radio City 1973",
         "filename": "Pink Floyd - Radio City 1973 - Rock Poster.jpg",
         "description": "Celebrate Pink Floyd's historic Radio City 1973 performance with this poster.",
+        "note": "",
         "options": [
             {
 				"id": 1,
@@ -95,6 +100,7 @@ const posters = `[
         "title": "Tour Poster by Bob Masse",
         "filename": "Pink Floyd - Tour Poster by Bob Masse.jpg",
         "description": "Artistic poster by Bob Masse for a Pink Floyd tour, with vivid artwork.",
+        "note": "",
         "options": [
             {
 				"id": 1,
@@ -113,6 +119,7 @@ const posters = `[
         "title": "Ok Computer",
         "filename": "Radiohead - Ok Computer - Poster.jpg",
         "description": "A minimalist poster reflecting the ethos of Radiohead’s Ok Computer.",
+        "note": "",
         "options": [
             {
 				"id": 1,
@@ -131,6 +138,7 @@ const posters = `[
         "title": "Currents",
         "filename": "Tame Impala - Currents - Rock Poster.jpg",
         "description": "Poster featuring Tame Impala's album Currents, available in two sizes.",
+        "note": "",
         "options": [
             {
 				"id": 1,
@@ -158,6 +166,7 @@ const posters = `[
         "title": "Reggatta de Blanc",
         "filename": "The Police - Reggatta de Blanc - Rock Poster.jpg",
         "description": "Iconic album cover poster from The Police’s Reggatta de Blanc.",
+        "note": "",
         "options": [
             {
 				"id": 1,
