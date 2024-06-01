@@ -6,7 +6,7 @@ export default function PosterMore(props: any) {
     const { updateDetailOption, updateDescriptionOrNotes } = useContext(ItemContext);
     const [inputValues, setInputValues] = useState({
         description: props.posterdetails.description,
-        notes: props.posterdetails.notes,
+        note: props.posterdetails.note,
     });
 
     const handleChange = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -35,7 +35,7 @@ export default function PosterMore(props: any) {
                         <input type="text" name="description" id={props.posterId} size={1} className="w-full text-center h-12" disabled={props.isLocked} value={inputValues.description} onChange={handleChange} />
                     </label>
                     <label> Notes
-                        <textarea id={props.posterId} name="notes" className="w-full h-24 p-2" disabled={props.isLocked} onChange={handleChange} />
+                        <textarea id={props.posterId} name="note" className="w-full h-24 p-2" disabled={props.isLocked} onChange={handleChange} value={inputValues.note} />
                     </label>
                     <div className="flex">
                         {props.posterOptions.map((option: any) => {
