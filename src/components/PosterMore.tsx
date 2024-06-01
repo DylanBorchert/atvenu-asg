@@ -3,7 +3,7 @@ import { useContext, useState } from "react";
 import Popup from "reactjs-popup"
 
 export default function PosterMore(props: any) {
-    const { updateDetails, updateDetailOption, updateDescriptionOrNotes } = useContext(ItemContext);
+    const { updateDetailOption, updateDescriptionOrNotes } = useContext(ItemContext);
     const [inputValues, setInputValues] = useState({
         description: props.posterdetails.description,
         notes: props.posterdetails.notes,
@@ -32,10 +32,10 @@ export default function PosterMore(props: any) {
             >
                 <div className="p-2 bg-gray-200 rounded-md min-w-fit">
                     <label> Description
-                        <input type="text" name="description" id={props.posterId} defaultValue={props.posterdetails.description} size={1} className="w-full text-center h-12" disabled={props.isLocked} value={inputValues.description} onChange={handleChange} />
+                        <input type="text" name="description" id={props.posterId} size={1} className="w-full text-center h-12" disabled={props.isLocked} value={inputValues.description} onChange={handleChange} />
                     </label>
                     <label> Notes
-                        <textarea id={props.posterId} name="notes" defaultValue={props.posterdetails.notes} className="w-full h-24 p-2" disabled={props.isLocked} onChange={handleChange} />
+                        <textarea id={props.posterId} name="notes" className="w-full h-24 p-2" disabled={props.isLocked} onChange={handleChange} />
                     </label>
                     <div className="flex">
                         {props.posterOptions.map((option: any) => {
