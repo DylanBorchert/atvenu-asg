@@ -32,12 +32,14 @@ export const ItemProvider = ({ children }: { children: React.ReactNode }) => {
 	 * @param {any} e - The event object containing the target element.
 	 */
 	const updateDetails = (e: React.ChangeEvent<HTMLInputElement>) => {
+		console.log('newPosterDetails', e.target.id, e.target.name, e.target.value);
 		let newPosterDetails = posters.map((poster: any) => {
 			if (poster.id === Number(e.target.id)) {
 				return { ...poster, [e.target.name]: Number.isInteger(e.target.value) ? Number(e.target.value) : e.target.value }
 			}
 			return poster;
 		})
+		console.log('newPosterDetails', newPosterDetails);
 		setPosters(newPosterDetails);
 	}
 
@@ -48,7 +50,7 @@ export const ItemProvider = ({ children }: { children: React.ReactNode }) => {
 	 * @param options - The new options for the poster.
 	 */
 	const updateDetailOption = (e: React.ChangeEvent<HTMLInputElement>, posterId: number) => {
-		console.log('newPosterDetails', posterId, e.target.id, e.target.name, e.target.value);
+		console.log('newPosterOption', posterId, e.target.id, e.target.name, e.target.value);
 		let newDetails = posters.map((poster: any) => {
 			if (poster.id === posterId) {
 				let newOptions = poster.options.map((option: any) => {
@@ -64,9 +66,19 @@ export const ItemProvider = ({ children }: { children: React.ReactNode }) => {
 		setPosters(newDetails);
 	}
 
+	const updateDescriptionOrNotes = (data: any, posterId: number) => {
+		let newDetails = posters.map((poster: any) => {
+			if (poster.id === posterId) {
+				return { ...poster, ...data }
+			}
+			return poster;
+		})
+		setPosters(newDetails);
+	}
+
 	return (
 		<ItemContext.Provider
-			value={{ posters, setPosters, updatePosters, updateDetails, updateDetailOption }}
+			value={{ posters, setPosters, updatePosters, updateDetails, updateDetailOption, updateDescriptionOrNotes }}
 		>
 			{children}
 		</ItemContext.Provider>
