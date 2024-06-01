@@ -1,17 +1,13 @@
 'use client';
 import InventorySummary from '@/components/InventorySummary';
 import PosterList from '@/components/PosterList';
-import { getPosters } from '@/util/posterUtil';
+import { ItemContext } from '@/context/ItemProvider';
 
-import { useEffect, useMemo, useState } from "react";
+import { useContext, useEffect, useMemo, useState } from "react";
 
 export default function Home() {
+  const { posters, setPosters } = useContext(ItemContext);
   const [isLocked, setIsLocked] = useState(false);
-  const [posters, setPosters] = useState([] as any);
-
-  useEffect(() => {
-    setPosters(getPosters());
-  }, []);
 
   /**
    * Calculates the total number of units sold based on the given posters array.
@@ -20,7 +16,7 @@ export default function Home() {
    * @returns The total number of units sold.
    */
   const unitsSold = useMemo(() => {
-    return posters.reduce((acc: any, option: any) => {
+    return posters?.reduce((acc: any, option: any) => {
       return acc + option.options.reduce((acc: any, option: any) => {
         return acc + ((option.CountIn + option.Add) - option.CountOut - option.Comp)
       }, 0);
@@ -36,7 +32,7 @@ export default function Home() {
    * @returns The total gross value.
    */
   const totalGross = useMemo(() => {
-    return posters.reduce((acc: any, option: any) => {
+    return posters?.reduce((acc: any, option: any) => {
       return acc + option.options.reduce((acc: any, option: any) => {
         return acc + ((option.CountIn + option.Add) - option.CountOut - option.Comp) * option.Cost
       }, 0);
@@ -51,7 +47,7 @@ export default function Home() {
    * @returns The total count out.
    */
   const totalCountOut = useMemo(() => {
-    return posters.reduce((acc: any, option: any) => {
+    return posters?.reduce((acc: any, option: any) => {
       return acc + option.options.reduce((acc: any, option: any) => {
         return acc + option.CountOut
       }, 0);
@@ -65,7 +61,7 @@ export default function Home() {
    * @param {any} newPoster - The new poster object to be added or updated in the posters array.
    */
   const updatePosters = (newPoster: any) => {
-    let newPosters = posters.map((poster: any) => {
+    let newPosters = posters?.map((poster: any) => {
       if (poster.id === newPoster.id) {
         return newPoster;
       }
