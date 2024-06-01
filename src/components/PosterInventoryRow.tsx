@@ -1,6 +1,8 @@
-import { useMemo, useState } from "react";
+import { ItemContext } from "@/context/ItemProvider";
+import { useContext, useMemo, useState } from "react";
 
 export default function PosterInventoryRow(props: any) {
+    const { updateDetailOption } = useContext(ItemContext);
 
     const TotalLn = useMemo(() => {
         return props.option.CountIn + props.option.Add
@@ -30,19 +32,19 @@ export default function PosterInventoryRow(props: any) {
                 {QTYAvail}
             </td>
             <td className="border">
-                <input type="text" name="CountIn" defaultValue={props.option.CountIn} size={1} className="w-full text-center h-12" onBlur={props.updatePoster} disabled={props.isLocked} id={props.option.id} />
+                <input type="text" name="CountIn" defaultValue={props.option.CountIn} size={1} className="w-full text-center h-12" onBlur={(e) => updateDetailOption(e, props.posterId)} disabled={props.isLocked} id={props.option.id} />
             </td>
             <td className="text-green-500 border">
-                <input type="text" name="Add" defaultValue={props.option.Add} size={1} className="w-full text-center h-12" onBlur={props.updatePoster} disabled={props.isLocked} id={props.option.id} />
+                <input type="text" name="Add" defaultValue={props.option.Add} size={1} className="w-full text-center h-12" onBlur={(e) => updateDetailOption(e, props.posterId)} disabled={props.isLocked} id={props.option.id} />
             </td>
             <td className="text-[#00c7fb] border cursor-not-allowed">
                 {TotalLn}
             </td>
             <td className="text-red-500 border">
-                <input type="text" name="Comp" defaultValue={props.option.Comp} size={1} className="w-full text-center h-12" onBlur={props.updatePoster} disabled={props.isLocked} id={props.option.id} />
+                <input type="text" name="Comp" defaultValue={props.option.Comp} size={1} className="w-full text-center h-12" onBlur={(e) => updateDetailOption(e, props.posterId)} disabled={props.isLocked} id={props.option.id} />
             </td>
             <td className="border">
-                <input type="text" name="CountOut" defaultValue={props.option.CountOut} size={1} className="w-full text-center h-12" onBlur={props.updatePoster} disabled={props.isLocked} id={props.option.id} />
+                <input type="text" name="CountOut" defaultValue={props.option.CountOut} size={1} className="w-full text-center h-12" onBlur={(e) => updateDetailOption(e, props.posterId)} disabled={props.isLocked} id={props.option.id} />
             </td>
             <td className="text-[#00c7fb] border cursor-not-allowed">
                 {TotalSold}

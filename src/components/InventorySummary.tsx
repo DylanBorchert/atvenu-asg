@@ -6,7 +6,7 @@ import { useContext, useMemo } from 'react';
 
 export default function InventorySummary(props: any) {
 
-    const { posters, setPosters } = useContext(ItemContext);
+    const { posters } = useContext(ItemContext);
 
     /**
  * Calculates the total number of units sold based on the given posters array.
